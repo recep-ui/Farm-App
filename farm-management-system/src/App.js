@@ -1,0 +1,42 @@
+import React, { useState } from "react";
+import "./App.css";
+import Sidebar from "./components/Sidebar";
+import Dashboard from "./components/Dashboard";
+import Animals from "./components/Animals";
+import Production from "./components/Production";
+import HealthRecords from "./components/HealthRecords";
+import Employees from "./components/Employees";
+
+function App() {
+  const [activePage, setActivePage] = useState("Dashboard");
+
+  const handlePageChange = (page) => {
+    setActivePage(page);
+  };
+
+  const renderPage = () => {
+    switch (activePage) {
+      case "Animals":
+        return <Animals />;
+      case "Production":
+        return <Production />;
+      case "Health Records":
+        return <HealthRecords />;
+      case "Employees":
+        return <Employees />;
+      default:
+        return <Dashboard />;
+    }
+  };
+
+  return (
+    <div className="app-container">
+      <Sidebar activePage={activePage} onPageChange={handlePageChange} />
+      <div className="main-content">
+        {renderPage()}
+      </div>
+    </div>
+  );
+}
+
+export default App;
