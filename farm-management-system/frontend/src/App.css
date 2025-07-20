@@ -1,0 +1,290 @@
+/* Modern başlıklar */
+h1, h2, h3 {
+  color: #33673b;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 18px;
+  margin-top: 0;
+}
+
+/* Kartlara ve formlara ekstra gölge ve geçiş */
+.form-section, .card, .table {
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.form-section:hover, .card:hover, .table:hover {
+  box-shadow: 0 4px 16px rgba(51, 103, 59, 0.16);
+  transform: translateY(-2px) scale(1.01);
+}
+
+/* Responsive düzen */
+@media (max-width: 900px) {
+  .main-content {
+    padding: 10px;
+  }
+  .form-section {
+    flex-direction: column;
+    padding: 16px 8px;
+  }
+  .table th, .table td {
+    padding: 8px 6px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Butonlara renk geçişi ve animasyon */
+button, .form-section button, .table button {
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+button:active, .form-section button:active, .table button:active {
+  box-shadow: 0 2px 8px rgba(51, 103, 59, 0.18) inset;
+}
+
+/* Tablo başlıklarına ikon desteği (örnek) */
+.table th::before {
+  content: '\1F4C8  ';
+  font-size: 1em;
+  color: #b5c99a;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+/* Satır seçimi için hover efekti */
+.table tr:hover {
+  background: #e0f2e9;
+  cursor: pointer;
+}
+
+/* Sidebar için daha modern görünüm */
+.sidebar {
+  background: linear-gradient(180deg, #b5c99a 0%, #33673b 100%);
+  color: #fff;
+  box-shadow: 2px 0 12px rgba(51, 103, 59, 0.08);
+}
+.sidebar a {
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.sidebar a:hover {
+  color: #f6f6ef;
+  text-decoration: underline;
+}
+.form-section {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(51, 103, 59, 0.08);
+  padding: 24px 32px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+.form-section input, .form-section select {
+  padding: 8px 12px;
+  border: 1px solid #b5c99a;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-right: 8px;
+}
+.form-section button {
+  background: #388e3c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: background 0.2s;
+}
+.form-section button:hover {
+  background: #2e7031;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(51, 103, 59, 0.08);
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+.table th, .table td {
+  padding: 12px 16px;
+  text-align: left;
+}
+.table th {
+  background: #eaf4e6;
+  color: #33673b;
+  font-weight: 600;
+}
+.table tr:nth-child(even) {
+  background: #f6f6ef;
+}
+.table tr:hover {
+  background: #f0f7f4;
+}
+.table button {
+  background: #b5c99a;
+  color: #33673b;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-right: 4px;
+  transition: background 0.2s;
+}
+.table button:hover {
+  background: #33673b;
+  color: #fff;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background: #f6f6ef;
+}
+
+.sidebar {
+  width: 240px;
+  background: #33673b;
+  color: #fff;
+  padding: 32px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+.sidebar h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 32px;
+  margin-bottom: 32px;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+.sidebar li {
+  padding: 0;
+}
+.sidebar button {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  text-align: left;
+  padding: 16px 32px;
+  cursor: pointer;
+  border-left: 4px solid transparent;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  font-family: inherit;
+  font-weight: 500;
+  outline: none;
+}
+.sidebar button.active, .sidebar button:hover {
+  background: #4b8457;
+  border-left: 4px solid #b5c99a;
+  color: #b5c99a;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px 48px;
+  background: #f6f6ef;
+}
+.main-content h1 {
+  font-size: 2rem;
+  margin-bottom: 32px;
+  color: #33673b;
+}
+.dashboard-cards {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(51, 103, 59, 0.13);
+  padding: 36px 44px 28px 44px;
+  min-width: 180px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #33673b;
+  font-weight: 500;
+  position: relative;
+  transition: box-shadow 0.2s, transform 0.2s;
+  overflow: hidden;
+}
+.card:hover {
+  box-shadow: 0 8px 32px rgba(51, 103, 59, 0.18);
+  transform: translateY(-4px) scale(1.03);
+}
+.card h2 {
+  margin-bottom: 18px;
+  font-size: 1.3rem;
+  color: #388e3c;
+}
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 18px;
+  background: linear-gradient(90deg, #b5c99a 0%, #388e3c 100%);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(51, 103, 59, 0.08);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.card a:hover {
+  background: linear-gradient(90deg, #388e3c 0%, #b5c99a 100%);
+  color: #33673b;
+  box-shadow: 0 4px 16px rgba(51, 103, 59, 0.16);
+}
