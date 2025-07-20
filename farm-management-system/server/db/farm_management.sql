@@ -8,7 +8,9 @@ CREATE TABLE IF NOT EXISTS barns (
     Barn_id INT AUTO_INCREMENT PRIMARY KEY,
     Name TEXT NOT NULL,
     Capacity INT,
-    Location TEXT
+    Location TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 -- Animals Table
@@ -24,6 +26,8 @@ CREATE TABLE IF NOT EXISTS animals (
     Registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     Barn_id INT,
     Total_production REAL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (Barn_id) REFERENCES barns(Barn_id)
 );
 
@@ -34,7 +38,9 @@ CREATE TABLE IF NOT EXISTS employees (
     Last_name TEXT NOT NULL,
     Position TEXT,
     Contact_info TEXT,
-    Hire_date DATE
+    Hire_date DATE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 -- Health Records Table
@@ -47,6 +53,8 @@ CREATE TABLE IF NOT EXISTS health_records (
     Medications TEXT,
     Veterinarian_info TEXT,
     Notes TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (Animal_id) REFERENCES animals(Animal_id) ON DELETE CASCADE
 );
 
@@ -59,6 +67,8 @@ CREATE TABLE IF NOT EXISTS feeding_records (
     Quantity REAL,
     Unit TEXT,
     Notes TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (Animal_id) REFERENCES animals(Animal_id) ON DELETE CASCADE
 );
 
@@ -72,6 +82,8 @@ CREATE TABLE IF NOT EXISTS production_records (
     Unit TEXT,
     Quality TEXT,
     Notes TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (Animal_id) REFERENCES animals(Animal_id) ON DELETE CASCADE
 );
 
@@ -85,5 +97,7 @@ CREATE TABLE IF NOT EXISTS tasks (
     Due_date DATE,
     Status TEXT,
     Completed_date TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (Assigned_employee_id) REFERENCES employees(Employee_id)
 );

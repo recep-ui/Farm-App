@@ -1,7 +1,16 @@
 import React from "react";
 
 function Sidebar({ activePage, onPageChange }) {
-  const menuItems = ["Dashboard", "Animals", "Production", "Health Records", "Employees"];
+  const menuItems = [
+    "Dashboard",
+    "Animals",
+    "Barns",
+    "Feeding Records",
+    "Production",
+    "Health Records",
+    "Employees",
+    "Tasks"
+  ];
 
   return (
     <nav className="sidebar">

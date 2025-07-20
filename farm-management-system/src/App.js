@@ -6,6 +6,9 @@ import Animals from "./components/Animals";
 import Production from "./components/Production";
 import HealthRecords from "./components/HealthRecords";
 import Employees from "./components/Employees";
+import Barns from "./components/Barns";
+import FeedingRecords from "./components/FeedingRecords";
+import Tasks from "./components/Tasks";
 
 function App() {
   const [activePage, setActivePage] = useState("Dashboard");
@@ -18,12 +21,18 @@ function App() {
     switch (activePage) {
       case "Animals":
         return <Animals />;
+      case "Barns":
+        return <Barns />;
+      case "Feeding Records":
+        return <FeedingRecords />;
       case "Production":
         return <Production />;
       case "Health Records":
         return <HealthRecords />;
       case "Employees":
         return <Employees />;
+      case "Tasks":
+        return <Tasks />;
       default:
         return <Dashboard />;
     }
