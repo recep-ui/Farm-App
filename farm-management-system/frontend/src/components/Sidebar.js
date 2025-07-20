@@ -1,6 +1,5 @@
-import React from 'react';
 
-function Sidebar({ activePage, onPageChange }) {
+function Sidebar({ activePage, onPageChange, isAdmin }) {
   return (
     <div className="sidebar">
       <h2>Farm Management</h2>
@@ -14,6 +13,9 @@ function Sidebar({ activePage, onPageChange }) {
           <li><button className={activePage==="Feeding Records"?"active":''} onClick={()=>onPageChange("Feeding Records")}>Feeding Records</button></li>
           <li><button className={activePage==="Production"?"active":''} onClick={()=>onPageChange("Production")}>Production</button></li>
           <li><button className={activePage==="Tasks"?"active":''} onClick={()=>onPageChange("Tasks")}>Tasks</button></li>
+          {isAdmin && (
+            <li><button className={activePage==="UserManagement"?"active":''} onClick={()=>onPageChange("UserManagement")}>Kullanıcı Yönetimi</button></li>
+          )}
         </ul>
       </nav>
     </div>
